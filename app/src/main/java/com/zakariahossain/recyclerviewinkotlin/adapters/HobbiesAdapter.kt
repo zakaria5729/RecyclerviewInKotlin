@@ -20,7 +20,8 @@ class HobbiesAdapter(private val context: Context, private val hobbies: List<Hob
         MyViewHolder(LayoutInflater.from(context).inflate(R.layout.item_list, parent, false))
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.itemView.tvHobby?.text = hobbies[position].title
+        holder.itemView.tvHobby?.text = hobbies[position].title.plus(" -> ")
+        holder.itemView.tvPreference?.text = hobbies[position].preferance.toString()
     }
 
     override fun getItemCount(): Int = hobbies.size
